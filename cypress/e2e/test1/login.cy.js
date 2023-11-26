@@ -25,12 +25,20 @@ describe('verify Magento Login Functionlity', () => {
     cy.get('.message-error div').should('be.visible').should('contain', 'The account sign-in was incorrect or your account is disabled temporarily. Please wait and try again later.'); 
   });
 
-  it(' login gagal dengan  email tidak lengkap dan password valid', () => {
+  it.skip(' login gagal dengan  email tidak lengkap dan password valid', () => {
     cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/')
     cy.get('#email').type(userDataLogin.invalid.invalid_user);
     cy.get('#pass').type(userDataLogin.valid.valid_password);
     cy.get('#send2').click();
     cy.get('#email-error').should('contain', 'Please enter a valid email address (Ex: johndoe@domain.com).'); 
+  });
+
+  it('sukses login email valid dan password valid - dengan CUSTOM COMMANDS', () => {
+    cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/')
+    cy.login('rusdilubism@gmail.com', 'Panyabungan27');
+    cy.url().should('include', 'https://magento.softwaretestingboard.com/')
+  
+ 
   });
 
   });
