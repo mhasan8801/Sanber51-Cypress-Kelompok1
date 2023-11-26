@@ -1,7 +1,7 @@
 describe('Proceed to checkout feature in website magento', () => {
 
   beforeEach(() => {
-    cy.visit('https://magento.softwaretestingboard.com/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLnNvZnR3YXJldGVzdGluZ2JvYXJkLmNvbS8%2C/')
+    cy.visit('')
     cy.get('#email').type('a@com.id'); 
     cy.get('#pass').type('Password1234!'); 
     cy.get('#send2').click();
@@ -31,5 +31,6 @@ describe('Proceed to checkout feature in website magento', () => {
     cy.get('.action.primary.checkout').click()
     cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/onepage/success/')
     cy.get('.base').should('contain', 'Thank you for your purchase!')
+    cy.screenshot('result');
   })
 })
