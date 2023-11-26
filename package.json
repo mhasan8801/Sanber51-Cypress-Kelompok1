@@ -180,7 +180,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "choose-product": "npx cypress run --browser chrome --spec 'cypress/e2e/kelompok1/choose-product/choose-products.cy.js'"
+    "choose-product": "npx cypress run --browser chrome --spec 'cypress/e2e/kelompok1/choose-product/choose-products.cy.js'",
+    "cypress": "cross-env CYPRESS_VERIFY_TIMEOUT=100000 && cypress run --e2e",
+    "cypress:open": "cross-env CYPRESS_VERIFY_TIMEOUT=100000 && cypress open --e2e"
   },
   "keywords": [],
   "author": "",

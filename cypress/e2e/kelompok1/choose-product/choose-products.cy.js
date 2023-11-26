@@ -1,6 +1,6 @@
 const userData = require("../../../fixtures/userData.json");
 describe("choose product", () => {
-  it.only("choose product radiant tee with Sign In Success", () => {
+  it("choose product radiant tee with Sign In Success", () => {
     cy.visit("");
     cy.login("buattest@gmail.com", "test123*");
     cy.url().should("include", "https://magento.softwaretestingboard.com/");
