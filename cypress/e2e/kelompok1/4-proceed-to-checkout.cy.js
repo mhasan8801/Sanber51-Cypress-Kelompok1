@@ -1,28 +1,31 @@
+const data = require("../../fixtures/data.json")
+
 describe('Proceed to checkout feature in website magento', () => {
 
   beforeEach(() => {
-    cy.login('a@com.id','Password1234!')
-    cy.chooseProduct('#option-label-size-143-item-170','#option-label-color-93-item-57')
+    cy.login(data.username, data.password)
+    cy.chooseProduct(data.size,data.color)
   })
 
   it('Success proceed to checkout', () => {
     cy.get('.showcart').click()
     cy.get('#top-cart-btn-checkout').click({force: true});
-    cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/#shipping')
-    cy.get('[name="company"]').type('sanbercode')
-    cy.get('[name="street[0]"]').type('Jln. Tester 404')
-    cy.get('[name="street[1]"]').type('Kelurahan Production')
-    cy.get('[name="street[2]"]').type('Kecamatan Issue')
-    cy.get('[name="city"]').type('Staging')
-    cy.get('[name="region_id"]').select('Alabama');
-    cy.get('[name="postcode"]').type('1234-1234')
-    cy.get('[name="telephone"]').type('081121121121')
+    cy.url().should('include', data.urlHome)
+    cy.get('[name="company"]').type(data.company)
+    cy.get('[name="street[0]"]').type(data.street0)
+    cy.get('[name="street[1]"]').type(data.street1)
+    cy.get('[name="street[2]"]').type(data.street2)
+    cy.get('[name="city"]').type(data.city)
+    cy.get('[name="region_id"]').select(data.regionId);
+    cy.get('[name="postcode"]').type(data.postcode)
+    cy.get('[name="telephone"]').type(data.telephone)
     cy.get('tbody > :nth-child(1) > :nth-child(1)').click()
     cy.get('.button.action.continue.primary').click()
-    cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/#payment')
+    cy.url().should('include', data.urlCheckout)
     cy.get('.action.primary.checkout').click()
-    cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/onepage/success/')
+    cy.url().should('include', data.urlSuccessOrder)
     cy.get('.base').should('contain', 'Thank you for your purchase!')
     cy.screenshot('result');
   })
+
 })

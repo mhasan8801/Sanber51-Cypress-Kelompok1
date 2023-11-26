@@ -1,0 +1,18 @@
+{
+  "username": "a@com.id",
+  "password": "Password1234!",
+  "size": "#option-label-size-143-item-170",
+  "color": "#option-label-color-93-item-57",
+  "urlSale": "https://magento.softwaretestingboard.com/checkout/#shipping",
+  "company": "sanbercode",
+  "companyNew": "polije",
+  "street0": "Jln. Tester 404",
+  "street1": "Kelurahan Production",
+  "street2": "Kecamatan Issue",
+  "city": "Staging",
+  "regionId": "Alabama",
+  "postcode": "1234-1234",
+  "telephone": "081121121121",
+  "urlCheckout": "https://magento.softwaretestingboard.com/checkout/#payment",
+  "urlSuccessOrder": "https://magento.softwaretestingboard.com/checkout/onepage/success/"
+}
