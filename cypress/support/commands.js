@@ -12,7 +12,7 @@ Cypress.Commands.add('chooseProduct', (size, color) => {
     cy.get(size).click()
     cy.get(color).click()
     cy.get('#product-addtocart-button').click()
-    cy.wait(8000);
+    cy.wait(15000);
 })
 
 

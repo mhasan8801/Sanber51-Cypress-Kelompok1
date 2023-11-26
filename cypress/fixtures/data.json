@@ -1,5 +1,5 @@
 {
-  "username": "a@com.id",
+  "username": "mhasan@mail.test",
   "password": "Password1234!",
   "size": "#option-label-size-143-item-170",
   "color": "#option-label-color-93-item-57",
@@ -13,6 +13,7 @@
   "regionId": "Alabama",
   "postcode": "1234-1234",
   "telephone": "081121121121",
+  "telephoneEdit": "081999999999",
   "urlCheckout": "https://magento.softwaretestingboard.com/checkout/#payment",
   "urlSuccessOrder": "https://magento.softwaretestingboard.com/checkout/onepage/success/"
 }
