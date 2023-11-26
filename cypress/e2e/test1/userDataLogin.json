@@ -1,0 +1,13 @@
+{
+    "valid":{
+        "valid_user": "rusdilubism@gmail.com",
+        "valid_password" : "Panyabungan27"
+    },
+    "invalid":{
+         
+         "invalid_user" : "ABC123",
+         "invalid_password" : "ABC123"
+    }
+
+   
+}
