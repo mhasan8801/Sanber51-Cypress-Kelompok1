@@ -1,3 +1,21 @@
+
+Cypress.Commands.add('login', (username, password) => {
+    cy.visit('')
+    cy.get('#email').type(username); 
+    cy.get('#pass').type(password); 
+    cy.get('#send2').click();
+    cy.url().should('include', 'https://magento.softwaretestingboard.com/')
+})
+
+Cypress.Commands.add('chooseProduct', (size, color) => {
+    cy.visit('https://magento.softwaretestingboard.com/radiant-tee.html')
+    cy.get(size).click()
+    cy.get(color).click()
+    cy.get('#product-addtocart-button').click()
+    cy.wait(4000);
+})
+
+
 // ***********************************************
 // This example commands.js shows you how to
 // create various custom commands and overwrite

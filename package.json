@@ -3,6 +3,7 @@
     "cypress": "^13.6.0"
   },
   "scripts": {
-    "mulai" : "npx cypress open"
+    "checkout" : "npx cypress run --spec 'cypress/e2e/kelompok1/4-proceed-to-checkout.cy.js'"
   }
+  
 }

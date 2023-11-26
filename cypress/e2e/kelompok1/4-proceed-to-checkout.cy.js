@@ -1,20 +1,12 @@
 describe('Proceed to checkout feature in website magento', () => {
 
   beforeEach(() => {
-    cy.visit('')
-    cy.get('#email').type('a@com.id'); 
-    cy.get('#pass').type('Password1234!'); 
-    cy.get('#send2').click();
-    cy.url().should('include', 'https://magento.softwaretestingboard.com/')
-    cy.visit('https://magento.softwaretestingboard.com/radiant-tee.html')
-    cy.get('#option-label-size-143-item-170').click()
-    cy.get('#option-label-color-93-item-57').click()
-    cy.get('#product-addtocart-button').click()
-    cy.wait(4000);
-    cy.get('.showcart').click()
+    cy.login('a@com.id','Password1234!')
+    cy.chooseProduct('#option-label-size-143-item-170','#option-label-color-93-item-57')
   })
 
   it('Success proceed to checkout', () => {
+    cy.get('.showcart').click()
     cy.get('#top-cart-btn-checkout').click({force: true});
     cy.url().should('include', 'https://magento.softwaretestingboard.com/checkout/#shipping')
     cy.get('[name="company"]').type('sanbercode')
