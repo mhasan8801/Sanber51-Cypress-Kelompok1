@@ -5,5 +5,5 @@ class pageupdatecart{
     otombolcart = '.showcart'
     otombolloginpage = '.panel > .header > .authorization-link > a'
 }
-
+ 
 export default new pageupdatecart()
